@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: [android, ios]
 
     steps:
       - name: Checkout Repo
@@ -28,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Dev Client
-        run: eas build --platform ${{ matrix.platform }} --profile development --non-interactive
+      - name: Build Android Dev Client
+        run: eas build --platform android --profile development --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
