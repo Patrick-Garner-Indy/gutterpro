@@ -16,6 +16,9 @@
       "eas": {
         "projectId": "b24ce4fc-95d7-4dbc-9758-e82404b50c0f"
       }
+    },
+    "android": {
+      "package": "com.gutterpro.app"
     }
   }
 }
