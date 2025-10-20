@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # optional manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,12 +20,18 @@ jobs:
           node-version: '20.x'
 
       - name: Install EAS CLI
-        run: npm install -g eas-cli
+        run: npm install -g eas-cli expo-cli
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build Android Dev Client
+      - name: Run Expo Prebuild (Android only)
+        run: npx expo prebuild --platform android --non-interactive
+
+      - name: Reinstall Dependencies After Prebuild
+        run: npm install
+
+      - name: Build Dev Client (Android)
         run: eas build --platform android --profile development --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
