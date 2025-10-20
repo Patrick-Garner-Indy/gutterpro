@@ -19,6 +19,9 @@
     },
     "android": {
       "package": "com.gutterpro.app"
+    },
+    "ios": {
+      "bundleIdentifier": "com.gutterpro.app"
     }
   }
 }
