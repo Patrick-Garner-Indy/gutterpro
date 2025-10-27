@@ -1,0 +1,18 @@
+# Project root .gitignore
+
+# Node modules
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Build outputs
+dist/
+build/
+web-build/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

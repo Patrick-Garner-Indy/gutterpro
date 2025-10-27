@@ -1,6 +1,6 @@
-// src/screens/JobFormScreen.tsx
 import React, { useState } from 'react';
-import { ScrollView, View, Text, TextInput, Button } from 'react-native';
+import { ScrollView, View, Text, TextInput } from 'react-native';
+import { ButtonPrimary } from '../components/ButtonPrimary';
 
 export const JobFormScreen: React.FC = () => {
   const [customer, setCustomer] = useState('');
@@ -38,7 +38,7 @@ export const JobFormScreen: React.FC = () => {
           className="border p-3 mb-3"
         />
 
-        <Button title="Submit" onPress={handleSubmit} />
+        <ButtonPrimary title="Submit" onPress={handleSubmit} icon="check" />
       </View>
     </ScrollView>
   );

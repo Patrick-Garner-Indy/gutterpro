@@ -1,26 +1,16 @@
+// App.tsx
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { LoginScreen } from './src/screens/LoginScreen';
-import { DashboardScreen } from './src/screens/DashboardScreen';
-import { JobFormScreen } from './src/screens/JobFormScreen';
-
-export type RootStackParamList = {
-  Login: undefined;
-  Dashboard: undefined; // no props needed
-  JobForm: undefined; // can add params later if needed
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
+import { StatusBar } from 'react-native';
+import { AppNavigator } from './src/navigation/AppNavigator';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Dashboard" component={DashboardScreen} />
-        <Stack.Screen name="JobForm" component={JobFormScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      {/* Set a consistent status bar style */}
+      <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+      
+      {/* Navigation container and stack come from AppNavigator */}
+      <AppNavigator />
+    </>
   );
 }
